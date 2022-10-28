@@ -5,6 +5,7 @@ const {
     addBundleVisualizer,
     addWebpackAlias,
     adjustWorkbox,
+    addWebpackExternals
   } = require("customize-cra");
   const path = require("path");
   const addLessLoader = require("customize-cra-less-loader");
@@ -49,5 +50,9 @@ const {
             'border-color-base':'#d9d9d9'
           }
         },
+      }),
+      addWebpackExternals({
+        react: "React",
+        "react-dom": "ReactDOM"
       }),
   );
