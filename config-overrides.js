@@ -8,6 +8,7 @@ const {
   addWebpackExternals,
   overrideDevServer,
   watchAll,
+  fixBabelImports,
 } = require("customize-cra");
 const path = require("path");
 const addLessLoader = require("customize-cra-less-loader");
@@ -19,6 +20,10 @@ const addDevServerConfig = () => (config) => {
     },
   };
 };
+const rewiredMap = () => (config) => {
+  config.devtool = config.mode === 'development' ? 'cheap-module-source-map' : false
+  return config
+}
 module.exports = {
   webpack: override(
     // enable legacy decorators babel plugin
@@ -64,7 +69,13 @@ module.exports = {
     addWebpackExternals({
       react: "React",
       "react-dom": "ReactDOM",
-    })
+    }),
+    fixBabelImports("import", {
+      libraryName: "antd",
+      libraryDirectory: "es",
+      style: "css",
+    }),
+    rewiredMap()
   ),
   devServer: overrideDevServer(watchAll(), addDevServerConfig()),
 };
