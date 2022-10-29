@@ -5,12 +5,12 @@ import styles from './index.module.less'
 
 const App = () => {
   useEffect(()=>{
-    console.log('----')
+    console.log('--sdsd--')
   },[])
   return (
     <div className=" flex flex-row border border-green-200">
       <header className={styles['ss']}>
-        ssss
+        sssssdsdsdsdsd444455
       </header>
     </div>
   );
