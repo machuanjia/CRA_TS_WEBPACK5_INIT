@@ -9,6 +9,7 @@ const {
   overrideDevServer,
   watchAll,
   fixBabelImports,
+  // useBabelRc,
 } = require("customize-cra");
 const path = require("path");
 const addLessLoader = require("customize-cra-less-loader");
@@ -99,8 +100,8 @@ module.exports = {
       },
     }),
     addWebpackExternals({
-      // react: "React",
-      // "react-dom": "ReactDOM",
+      react: "React",
+      "react-dom": "ReactDOM",
     }),
     fixBabelImports("import", {
       libraryName: "antd",
@@ -113,6 +114,7 @@ module.exports = {
       style: true //(module) => `${module}/index.less`,
     }),
     rewiredMap(),
+    // useBabelRc(),
     (config) => {
       config.plugins.push(new MonacoWebpackPlugin())
       return config
