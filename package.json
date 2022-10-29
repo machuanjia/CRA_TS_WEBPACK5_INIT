@@ -17,13 +17,13 @@
     "async-task-mapping": "^0.0.13",
     "hox": "^1.1.4",
     "monaco-editor": "^0.34.1",
-    "otter-pro": "^0.4.8",
+    "otter-pro": "^0.4.9",
     "otter-react-photo-view": "^1.1.4",
     "qiankun": "^2.8.3",
-    "react": "^18.2.0",
+    "react": "18.2.0",
     "react-aws-s3": "^1.5.0",
     "react-count-to": "^0.12.0",
-    "react-dom": "^18.2.0",
+    "react-dom": "18.2.0",
     "react-i18next": "^11.16.4",
     "react-monaco-editor": "^0.50.1",
     "react-router-dom": "^6.4.2",
@@ -32,7 +32,9 @@
     "web-vitals": "^2.1.4"
   },
   "resolutions": {
-    "react-i18next": ">=11.16.4"
+    "react-i18next": ">=11.16.4",
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0"
   },
   "scripts": {
     "start": "react-app-rewired start",

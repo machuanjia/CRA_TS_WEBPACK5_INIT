@@ -9,7 +9,7 @@ import React from 'react'
 
 import { ConfigProvider } from 'antd'
 import { getAntdLocal } from 'otter-pro/es/i18n'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom'
 
 import { setResources } from '@/i18n'
@@ -21,15 +21,13 @@ import './register'
 
 
 setResources()
-
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <ConfigProvider locale={getAntdLocal()} componentSize="middle">
     <Router>
       <App />
     </Router>
   </ConfigProvider>
-  ,
-  document.getElementById('root'),
 )
 
 // If you want to start measuring performance in your app, pass a function
