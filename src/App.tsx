@@ -8,7 +8,7 @@ const App = () => {
     console.log('----')
   },[])
   return (
-    <div className="App">
+    <div className=" flex flex-row border border-green-200">
       <header className={styles['ss']}>
         ssss
       </header>
