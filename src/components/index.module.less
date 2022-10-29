@@ -1,0 +1,57 @@
+.titleInput {
+  @apply h-12 p-1 text-2xl;
+  border: 0.0625rem solid #fff;
+}
+
+.errTitleInput {
+  @apply h-12 p-1 text-2xl;
+  border: 0.0625rem solid red;
+}
+
+.descriptionTextArea {
+  @apply p-1;
+  border: 0.0625rem solid #fff;
+}
+
+.titleInput:hover,
+.descriptionTextArea:hover {
+  border: 0.0625rem solid #ddd;
+}
+
+.titleInput:focus,
+.descriptionTextArea:focus {
+  border: 0.0625rem solid #348fe4;
+  box-shadow: none;
+}
+
+.listItem {
+  @apply flex items-center justify-between w-full pt-2 pb-2 !important;
+}
+
+.itemPrimaryLink {
+  @apply hidden;
+}
+
+.listItem:hover .itemPrimaryLink {
+  @apply block;
+}
+
+.alignText {
+  @apply block mt-2 mb-2 ml-1;
+}
+
+.createDiv {
+  @apply flex-1;
+}
+
+.selectDiv {
+  @apply w-36 mr-4;
+}
+
+.loadingDiv {
+  @apply w-3 pr-4;
+}
+
+.textDiv {
+  @apply w-8 flex justify-end items-center;
+}

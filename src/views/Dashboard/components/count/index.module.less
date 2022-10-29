@@ -1,0 +1,18 @@
+.card-panel {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .05);
+    @apply border border-solid border-medium h-28 cursor-pointer overflow-hidden bg-white flex flex-row;
+
+    .card-aside{
+        @apply text-4xl text-primary flex flex-row items-center p-4;
+    }
+
+    .card-main{
+        @apply flex-1 text-right flex flex-col pr-4;
+        .card-title{
+            @apply flex-1 text-xl text-weak flex flex-row items-end justify-end;
+        }
+        .card-count{
+            @apply flex-1 text-2xl text-medium;
+        }
+    }
+  }

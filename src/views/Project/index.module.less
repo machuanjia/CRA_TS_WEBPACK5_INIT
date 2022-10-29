@@ -1,0 +1,33 @@
+.sssss{
+    @apply border border-medium;
+    :global{
+        .ant-table.ant-table-bordered > .ant-table-container > .ant-table-body > table > tbody > tr > td{
+            @apply border-r-0;
+        }
+        .ant-table.ant-table-bordered > .ant-table-container{
+            @apply border-l-0;
+        }
+        .ant-table.ant-table-bordered > .ant-table-container > .ant-table-header > table{
+            @apply border-t-0;
+        }
+        .ant-table.ant-table-bordered > .ant-table-container > .ant-table-header > table > thead > tr > th:last-child{
+            @apply border-r-0;
+        }
+        .ant-table-thead > tr > th{
+            @apply bg-white !important;
+        }
+        .ant-spin-container{
+            height: calc(100vh - 185px);
+            @apply flex flex-col;
+            .ant-table{
+                @apply flex-1;
+            }
+            .ant-pagination{
+                @apply border-t border-medium pt-4 flex flex-row;
+                .ant-pagination-total-text{
+                    @apply flex-1 pl-4;
+                }
+            }
+        }
+    }
+}

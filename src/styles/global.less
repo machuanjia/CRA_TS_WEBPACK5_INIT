@@ -1,0 +1,42 @@
+body{
+  overflow: hidden;
+}
+
+.app-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 56px;
+  @apply duration-200;
+  &.app-wrap-open{
+    left: 223px;
+  }
+}
+
+.app-wrap-step {
+  position: absolute;
+  top: 0;
+  right: 202px;
+  bottom: 0;
+  left: 56px;
+}
+
+.opacity-white-80 {
+  background: rgba(255, 255, 255, 0.8);
+}
+.pop-wrap {
+  .ant-popover-inner-content {
+    @apply p-0 !important;
+  }
+}
+.danger-action{
+  @apply text-danger !important;
+}
+.icon-center{
+  @apply flex flex-row justify-center items-center !important;
+}
+
+.min-width-150 {
+  min-width: 150px;
+}

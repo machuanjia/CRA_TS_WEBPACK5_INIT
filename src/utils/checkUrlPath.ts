@@ -1,0 +1,1 @@
+export const checkPath = (location, arg) => new RegExp(`^\/projects\/\\S{32}\/${arg}`).test(location.pathname)

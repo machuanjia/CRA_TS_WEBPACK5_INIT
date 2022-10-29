@@ -24,12 +24,30 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-    <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
-     <!-- 
+
+    <title>MLPLATFORM</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@antv/s2-react@latest/dist/style.min.css"
+    />
+    <style>
+      #global-loading {
+        z-index: 2;
+        display: none;
+      }
+    </style>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"
+    ></script>
+    <!-- 
       <script src="https://cdn.bootcdn.net/ajax/libs/react-router-dom/5.3.0/react-router-dom.min.js"></script> -->
-      <!-- <script src="https://unpkg.com/browse/hox@1.1.6/umd/hox.js"></script>
+    <!-- <script src="https://unpkg.com/browse/hox@1.1.6/umd/hox.js"></script>
       <script src="https://unpkg.com/moment@2.29.4/moment.js"></script>
       <script src="https://unpkg.com/qiankun@2.8.1/lib/index.js"></script>
       <script src="https://unpkg.com/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
@@ -37,7 +55,23 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div
+      id="global-loading"
+      class="opacity-white-80 flex flex-row justify-center items-center h-full w-full absolute"
+    >
+      <div class="max-w-xs m-auto flex flex-col justify-center items-center">
+        <div
+          class="w-16 h-16 border-4 border-primary border-dashed rounded-full animate-spin"
+        ></div>
+        <div class="text-weak text-lg mt-4">Loading...</div>
+      </div>
+    </div>
     <div id="root"></div>
+    <div id="otterData" className="app-wrap hidden"></div>
+    <div id="otterExperiment" className="app-wrap hidden"></div>
+    <div id="otterModel" className="app-wrap hidden"></div>
+    <div id="otterTest" className="app-wrap hidden"></div>
+    <div id="otterPublish" className="app-wrap hidden"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

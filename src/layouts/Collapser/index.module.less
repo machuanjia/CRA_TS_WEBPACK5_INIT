@@ -1,0 +1,12 @@
+.collapser{
+    @apply rounded-b-full w-6 h-6 flex justify-center items-center  p-1 bg-primary text-xs text-white absolute border border-medium border-solid scale-90 cursor-pointer transform;
+    top:-2px;
+    left: 211px;
+    &:hover{
+        @apply scale-95;
+    }
+    &.collapser-close{
+        @apply rotate-180 rounded-t-full rounded-b-none; 
+        left: 43px;
+    }
+}

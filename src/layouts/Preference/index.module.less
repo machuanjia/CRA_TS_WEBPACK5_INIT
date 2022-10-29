@@ -1,0 +1,35 @@
+.preference-wrap {
+  @apply w-full h-12 flex flex-row items-center border-t border-solid border-medium pl-6 pr-6 cursor-pointer;
+  &:hover{
+    @apply bg-primaryLightHover;
+  }
+  &.preference-wrap-close{
+    @apply pl-0 pr-0 justify-center;
+  }
+}
+.preference-avatar-min{
+  min-width: 32px;
+}
+.avatar-pop{
+  :global{
+    .ant-popover-inner-content{
+      @apply p-0;
+    }
+  }
+}
+.team-list{
+  >div{
+    @apply pl-6 pr-6;
+  }
+}
+.team-menu{
+  @apply border-t border-medium;
+  &:hover{
+    @apply bg-element;
+  }
+  :global{
+    .ant-menu-submenu-title{
+      @apply h-20 !important;
+    }
+  }
+}

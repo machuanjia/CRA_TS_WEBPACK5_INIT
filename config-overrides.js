@@ -12,6 +12,7 @@ const {
 } = require("customize-cra");
 const path = require("path");
 const addLessLoader = require("customize-cra-less-loader");
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
 const addDevServerConfig = () => (config) => {
   return {
     ...config,
@@ -48,21 +49,30 @@ module.exports = {
       })
     ),
     addLessLoader({
-      lessOptions: {
-        javascriptEnabled: true,
-        modifyVars: {
-          "primary-color": "#2249C0",
-          "link-color": "#2249C0",
-          "success-color": "#21b58c",
-          "warning-color": "#FFAB04",
-          "error-color": "#e31818",
-          "font-size-base": "14px",
-          "heading-color": "#626E85",
-          "text-color": "#111830",
-          "text-color-secondary": "#f3A4861",
-          "disabled-color": "#d9d9d9",
-          "border-radius-base": "2px",
-          "border-color-base": "#d9d9d9",
+      cssLoaderOptions: {
+        sourceMap: false,
+        modules: {
+          localIdentName: "[hash:base64:8]",
+        },
+      },
+      lessLoaderOptions: {
+        lessOptions: {
+          // strictMath: true,
+          javascriptEnabled: true,
+          modifyVars: {
+            "primary-color": "#2249C0",
+            "link-color": "#2249C0",
+            "success-color": "#21b58c",
+            "warning-color": "#FFAB04",
+            "error-color": "#e31818",
+            "font-size-base": "14px",
+            "heading-color": "#626E85",
+            "text-color": "#111830",
+            "text-color-secondary": "#f3A4861",
+            "disabled-color": "#d9d9d9",
+            "border-radius-base": "2px",
+            "border-color-base": "#d9d9d9",
+          },
         },
       },
     }),
@@ -75,7 +85,18 @@ module.exports = {
       libraryDirectory: "es",
       style: "css",
     }),
-    rewiredMap()
+    fixBabelImports('otter-pro', {
+      libraryName: 'otter-pro',
+      libraryDirectory: 'es/components',
+      style: true //(module) => `${module}/index.less`,
+    }),
+    rewiredMap(),
+    (config) => {
+      config.plugins.push(new MonacoWebpackPlugin())
+      return config
+    },
   ),
-  devServer: overrideDevServer(watchAll(), addDevServerConfig()),
+  devServer: overrideDevServer(
+    // watchAll(), 
+    addDevServerConfig()),
 };
