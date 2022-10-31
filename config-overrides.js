@@ -120,7 +120,6 @@ module.exports = {
       return config
     },
   ),
-  
   devServer: overrideDevServer(
     // watchAll(), 
     addDevServerConfig()),
