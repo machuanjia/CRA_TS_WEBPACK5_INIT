@@ -5,7 +5,7 @@
  * @FilePath: /main/src/App.tsx
  * @Description:
  */
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 
 import { useMount } from 'ahooks'
 import { useNavigate } from 'react-router-dom'
